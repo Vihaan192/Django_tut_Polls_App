@@ -47,3 +47,16 @@ Follow these steps to set up and run the project locally.
 5. **Run the development Server**
     ```bash
     python manage.py runserver
+
+
+## Screenshots
+
+### Polls App
+| Polls Index & Filtering | Poll Details | Voting View |
+| :---: | :---: | :---: |
+| ![Polls Index](assets/polls_index.png) | ![Polls Details](assets/polls_details.png) | ![Polls Votes](assets/polls_votes.png) |
+
+### Music Tracker App
+| Music Search | Country Filter | Music Simulation |
+| :---: | :---: | :---: |
+| ![Music Search](assets/music_search.png) | ![Music Country](assets/music_country.png) | ![Music Simulation](assets/music_sim.png) |
