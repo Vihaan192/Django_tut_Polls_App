@@ -57,6 +57,6 @@ Follow these steps to set up and run the project locally.
 | ![Polls Index](assets/polls_index.png) | ![Polls Details](assets/polls_details.png) | ![Polls Votes](assets/polls_votes.png) |
 
 ### Music Tracker App
-| Music Search | Country Filter | Music Simulation |
+| Music Search | Country Filter | Similar Music |
 | :---: | :---: | :---: |
 | ![Music Search](assets/music_search.png) | ![Music Country](assets/music_country.png) | ![Similar Music Finder](assets/music_sim.png) |
