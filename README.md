@@ -1,4 +1,3 @@
-Markdown
 # Django Polls App
 
 Introductory django polls app , made using the Django tutorial with a few additional features like searching polls via categories (single or multiple).
