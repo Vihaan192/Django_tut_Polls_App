@@ -1,0 +1,39 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+
+<div class="container">
+    <h1>Available Polls</h1>
+    
+    {% if latest_question_list %}
+        <ul>
+        {% for question in latest_question_list %}
+            <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+</div>
+
+<div class="category-search-box">
+    <h3>Search by category</h3>
+    
+    <form method="GET" action="{% url 'polls:index' %}">
+        <div class="category-filters-grid">
+            {% for code, label in categories %}
+                <label class="category-filter-item">
+                    <input type="checkbox" name="category" value="{{ code }}" 
+                           {% if code in selected_category %}checked{% endif %}>
+                    <span>{{ label }}</span>
+                </label>
+            {% endfor %}
+        </div>
+        
+        <div class="filter-actions-bar">
+            <button type="submit" class="btn-apply">Apply</button>
+            {% if selected_category %}
+                <a href="{% url 'polls:index' %}" class="btn-clear">Clear</a>
+            {% endif %}
+        </div>
+    </form>
+</div>

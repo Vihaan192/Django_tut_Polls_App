@@ -1,0 +1,231 @@
+body {
+    background: linear-gradient(135deg, #090a0f 0%, #0d1a12 100%);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e2e8f0;
+}
+
+
+
+.container {
+    background: rgba(13, 20, 16, 0.85); 
+    border: 1px solid rgba(34, 197, 94, 0.2); 
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    width: 420px;
+    max-width: 90%;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    margin-top: 0;
+    color: #4ade80; 
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 14px;
+}
+
+li a {
+    display: block;
+    padding: 14px 18px;
+    background: #111813;
+    color: #cbd5e1 !important;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #1e2923;
+    transition: all 0.25s ease;
+    font-weight: 500;
+}
+
+li a:hover {
+    background: #166534; /* Rich emerald green */
+    color: #ffffff !important;
+    border-color: #22c55e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.25);
+}
+
+p {
+    text-align: center;
+    color: #94a3b8;
+}
+
+
+/* Card title */
+.container h2 {
+    margin-top: 0;
+    color: #4ade80;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Error message styling */
+.error-message {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    color: #f87171;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Choices list layout */
+.choices-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Individual clickable choice option box */
+.choice-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #111813;
+    border: 1px solid #1e2923;
+    border-radius: 10px;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.choice-card:hover {
+    background: #16261d;
+    border-color: #22c55e;
+    color: #ffffff;
+}
+
+/* Style the native radio button subtly */
+.choice-card input[type="radio"] {
+    accent-color: #22c55e;
+    transform: scale(1.2);
+}
+
+/* Professional Vote Submit Button */
+.vote-btn {
+    width: 100%;
+    padding: 14px;
+    background: #166534;
+    color: #ffffff;
+    border: 1px solid #22c55e;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.vote-btn:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.3);
+}
+
+
+/* Main Container with dotted green border */
+.category-search-box {
+    border: 2px dotted #22c55e;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #0d110f;
+    width: 100%;
+    max-width: 280px;
+    box-sizing: border-box;
+}
+
+.category-search-box h3 {
+    color: #22c55e;
+    margin-top: 0;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed rgba(34, 197, 94, 0.3);
+    padding-bottom: 8px;
+}
+
+.category-filters-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual filter item styled as a green box with white text */
+.category-filter-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #14231b;
+    border: 1px solid #22c55e;
+    color: #ffffff;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s ease;
+}
+
+.category-filter-item:hover {
+    background-color: #1b3326;
+}
+
+.category-filter-item input[type="checkbox"] {
+    accent-color: #22c55e;
+    cursor: pointer;
+}
+
+/* Apply (Left) and Clear (Right) layout */
+.filter-actions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.btn-apply {
+    background-color: #22c55e;
+    color: #000000;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.btn-apply:hover {
+    background-color: #16a34a;
+}
+
+.btn-clear {
+    color: #94a3b8;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.btn-clear:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
