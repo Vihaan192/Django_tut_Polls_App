@@ -59,4 +59,4 @@ Follow these steps to set up and run the project locally.
 ### Music Tracker App
 | Music Search | Country Filter | Music Simulation |
 | :---: | :---: | :---: |
-| ![Music Search](assets/music_search.png) | ![Music Country](assets/music_country.png) | ![Music Simulation](assets/music_sim.png) |
+| ![Music Search](assets/music_search.png) | ![Music Country](assets/music_country.png) | ![Similar Music Finder](assets/music_sim.png) |
