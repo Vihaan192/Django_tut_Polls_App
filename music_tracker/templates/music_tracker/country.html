@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country Charts - Last.fm Tracker</title>
+    <link rel="stylesheet" href="{% static 'music_tracker/style.css' %}">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+    <div class="sidebar-brand">
+        <img src="{% static 'music_tracker/ravikishan.png' %}" alt="Ravi Kishan" class="ravikishan-avatar">
+        <h2 style="margin: 0; font-size: 1.1rem;">Sarkari Spotify</h2>
+    </div>
+    <ul class="nav-links">
+        <li><a href="{% url 'music_tracker:country' %}" class="active">Country Charts</a></li>
+        <li><a href="{% url 'music_tracker:search' %}">Multi-Search</a></li>
+        <li><a href="{% url 'music_tracker:similar' %}">Similar Artists</a></li>
+    </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <div class="country-form-container">
+            <h1>Top Charts by Country</h1>
+            <p>Explore the most popular tracks and artists worldwide.</p>
+
+            <form method="GET" action="">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" value="{{ country }}" placeholder="e.g., United Kingdom, Spain..." class="country-input">
+                <button type="submit" class="country-button">Load Charts</button>
+            </form>
+        </div>
+
+        {% if country %}
+            <h2>Charts for {{ country }}</h2>
+            
+            <div style="display: flex; gap: 40px; margin-top: 20px;">
+                <!-- Top Artists Column -->
+                <div style="flex: 1; background: #ffffff; padding: 20px; border: 1px solid #e6e0d8; border-radius: 8px;">
+                    <h3>Top Artists</h3>
+                    <ul>
+                        {% for artist in artists %}
+                            <li><a href="{{ artist.url }}" target="_blank">{{ artist.name }}</a></li>
+                        {% empty %}
+                            <li>No artists found for this country.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <!-- Top Tracks Column -->
+                <div style="flex: 1; background: #ffffff; padding: 20px; border: 1px solid #e6e0d8; border-radius: 8px;">
+                    <h3>Top Tracks</h3>
+                    <ul>
+                        {% for track in tracks %}
+                            <li>
+                                <a href="{{ track.url }}" target="_blank">{{ track.name }}</a> 
+                                <small style="color: #666;">by {{ track.artist.name }}</small>
+                            </li>
+                        {% empty %}
+                            <li>No tracks found for this country.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </main>
+
+</body>
+</html>

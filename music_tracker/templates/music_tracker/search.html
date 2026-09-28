@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'music_tracker/style_search.css' %}">
+</head>
+<body>
+    <a href="{% url 'music_tracker:country' %}" class="home-btn">Home</a>
+    <div class="search-form-container">
+        <h1>Search Last.fm,</h1>
+        <p>Search artists, albums, and tracks.</p>
+
+        <form method="GET" action="">
+            <input type="text" name="q" value="{{ query }}" placeholder="Search for an artist, track, or album..." class="search-input">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+    {% if query %}
+        <div class="search-container">
+            
+            <!-- Artists Column -->
+            <div class="search-column">
+                <h3>Artists</h3>
+                <ul>
+                    {% for artist in artists %}
+                        <li>
+                            <a href="{{ artist.url }}" target="_blank">{{ artist.name }}</a>
+                        </li>
+                    {% empty %}
+                        <li>No artists found.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Albums Column -->
+            <div class="search-column">
+                <h3>Albums</h3>
+                <ul>
+                    {% for album in albums %}
+                        <li>
+                            <a href="{{ album.url }}" target="_blank">{{ album.name }}</a>
+                            <small>by {{ album.artist }}</small>
+                        </li>
+                    {% empty %}
+                        <li>No albums found.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Tracks Column -->
+            <div class="search-column">
+                <h3>Tracks</h3>
+                <ul>
+                    {% for track in tracks %}
+                        <li>
+                            <a href="{{ track.url }}" target="_blank">{{ track.name }}</a>
+                            <small>by {{ track.artist }}</small>
+                        </li>
+                    {% empty %}
+                        <li>No tracks found.</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        </div>
+    {% endif %}
+
+</body>
+</html>

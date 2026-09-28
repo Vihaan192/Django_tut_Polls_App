@@ -1,0 +1,116 @@
+body {
+    background-color: #fcfbf9;
+    color: #2c2c2c;
+    font-family: system-ui, -apple-system, sans-serif;
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: #b45309; /* Warm amber */
+}
+
+a {
+    color: #b45309;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Sidebar Styling --- */
+.sidebar {
+    width: 250px;
+    background-color: #f4efe6; /* Slightly deeper organic neutral */
+    border-right: 1px solid #e6e0d8;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.ravikishan-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* Makes it a clean circle */
+    object-fit: cover;   /* Prevents the image from stretching */
+    border: 1px solid #d1c7bc;
+}
+.sidebar h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid #d1c7bc;
+    border-radius: 6px;
+    color: #2c2c2c;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    background-color: #688363; /* Sage green highlight */
+    color: #ffffff;
+    border-color: #688363;
+    text-decoration: none;
+}
+
+/* --- Main Content Area --- */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.country-form-container {
+    margin-bottom: 30px;
+}
+
+.country-input {
+    padding: 8px 12px;
+    border: 1px solid #d1c7bc;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.country-input:focus {
+    border-color: #688363;
+}
+
+.country-button {
+    padding: 8px 16px;
+    background-color: #688363;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.country-button:hover {
+    background-color: #556b50;
+}

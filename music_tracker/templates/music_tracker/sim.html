@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'music_tracker/style_sim.css' %}">
+</head>
+<body>
+    <a href="{% url 'music_tracker:country' %}" class="home-btn">Home</a>
+    <div class="similar-form-container">
+        <h1>Similar Artists </h1>
+        <p>Type an artist you love to discover artists similar to them.</p>
+
+        <form method="GET" action="">
+            <input type="text" name="q" value="{{ query }}" placeholder="e.g., Linkin Park, Eminem , etc." class="similar-input">
+            <button type="submit" class="similar-button">Find Similar</button>
+        </form>
+    </div>
+
+    {% if query %}
+        <h2 style="text-align: center;">Artists similar to "{{ query }}"</h2>
+        
+        <div class="similar-grid">
+            {% for artist in similar_artists %}
+                <div class="similar-card">
+                    <h3>
+                        <a href="{{ artist.url }}" target="_blank">{{ artist.name }}</a>
+                    </h3>
+                    {% if artist.match %}
+                        <!-- Last.fm returns a match score between 0 and 1 -->
+                        <span class="match-score">Match: {{ artist.match|floatformat:2 }}</span>
+                    {% endif %}
+                    <br>
+                    <a href="?q={{ artist.name }}" class="similar-button" style="padding: 6px 12px; font-size: 0.85rem; display: inline-block;">Explore Similar</a>
+                </div>
+            {% empty %}
+                <div class="empty-message" style="grid-column: 1 / -1;">
+                    <p>No similar artists found for "{{ query }}". Try another name!</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+</body>
+</html>
